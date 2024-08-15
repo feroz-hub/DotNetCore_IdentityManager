@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  ms-sql-server:
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      ACCEPT_EULA: "Y"
+      SA_PASSWORD: "Zakira@2001"
+      
+    ports:
+      - "1433:1433"
