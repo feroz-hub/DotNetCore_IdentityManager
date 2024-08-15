@@ -1,12 +1,14 @@
+using System.Runtime.InteropServices;
 using IdentityManagerMVC.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 
 builder.Services.AddControllersWithViews();
+var connectionString = builder.Configuration.GetConnectionString(RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "DefaultConnection" : "DockerDb");
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DockerDb"));
+    options.UseSqlServer(connectionString);
 });
 var app = builder.Build();
 
