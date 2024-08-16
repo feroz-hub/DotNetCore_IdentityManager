@@ -1,5 +1,4 @@
 using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 using IdentityManagerMVC.Models;
 
 namespace IdentityManagerMVC.Controllers;
